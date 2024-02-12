@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Codes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@500&family=Roboto&display=swap" rel="stylesheet">
+
+    <style> 
+    
+        h1{
+            text-align: center;
+            font-size: 35px;
+        }
+
+        a {
+            display: block;
+            color: #000;
+            padding: 7px 10px;
+            text-decoration: none;
+            
+            font-size: 15px;
+            text-align: left;
+        }
+
+        p{
+            background-color: #E7E7E7;
+            padding: 20px;
+        
+        border: 5px solid black;
+
+
+        }
+
+        
+    </style>
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <h1  class="navbar-brand" href="index.html">Codigo calculadora</h1>
+            <p class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+
+                <a> package Projecto_Final ;</a>
+
+                <a> import java.util.Scanner; </a>
+                    
+                <a>public class Calculadora {</a>
+                        
+                    <a> public static void main(String[] args) { </a>
+                            
+                           <a> //El usuario ingresa los datos que se le piden como impresión.</a>
+                           <a> Scanner leer = new Scanner(System.in);</a>
+                    
+                           <a> //Ciclo en el que hay opciones de operaciones, se puede usar hasta que el usuario </a>
+                           <a> //Seleccione la opcion de salir. </a>
+                           <a>  while (true) { </a>
+                            <a>    // Muestra las opciones al usuario</a>
+                            <a>   System.out.println("¿Que quiere calcular? Seleccione una opcion: ");</a>
+                            <a>   System.out.println("1. Maximo Común Divisor (MCD): ");</a>
+                            <a>   System.out.println("2. Minimo Común Multiplo (mcm): ");</a>
+                            <a>    System.out.println("3. Ecuación de 2° Grado con Formula General: ");</a>
+                            <a>   System.out.println("4. Salir");</a>
+                            <a>   int opcion =  leer.nextInt(); //Lee la opcion ingresada </a>
+                            
+                            <a>    //Dependiendo el numero ingresado en las opciones, correra el "case" correspondiente </a>
+                            <a>    switch (opcion) { </a>
+                                <a>       case 1:  // Solicitar dos números para calcular el MCD  </a>
+                                <a>     System.out.println("Ingrese los 2 numeros"); </a>
+                                <a>    int n1 = leer.nextInt(); </a>
+                                <a>        int n2 = leer.nextInt(); </a>
+                    
+                                <a>       //Objeto ejecutable del calculo de MCD </a>
+                                <a>         int mcd = calcularMCD(n1, n2);  </a>
+                    
+                                <a>      System.out.println("El mcm de " + n1 + " y " + n2 + " es " + mcd); </a>
+                                            
+                                <a>   break;</a>
+                            
+                                <a>   case 2: //Solicita 2 numeros para calcular el mcm </a>
+                                <a>       System.out.println("Ingrese los 2 numeros");  </a>
+                                <a>       int n3 = leer.nextInt();   </a>
+                                <a>       int n4 = leer.nextInt();   </a>
+                    
+                                <a>     //Multiplica los 2 numeros y los divide entre el MCD ya calculado. </a>
+                                <a>      int mcm = (n3 * n4) / calcularMCD(n3, n4); </a>
+                    
+                                            
+                                <a>       System.out.println("El MCM de " + n3 + " y " + n4 + " es " + mcm);  </a>
+                                            
+                                <a>     break; </a>
+                    
+                                <a>     case 3: 
+                                <a>        //Sustituye valores de la formula general con los coeficientes y calcula 2 valores de </a>
+                                <a> // Uno sumando y el otro restando </a>
+                                <a>       System.out.println("Ingrese los 3 terminos de su ecuacion (ax2 + bx +c)");</a>
+                                 <a>        int a = leer.nextInt(); </a>
+                                 <a>       int b = leer.nextInt(); </a>
+                                        
+                                 <a>     int c = leer.nextInt();></a> 
+                                 
+                                 <a>      if (Math.sqrt((b*b) - 4 * a * c) >= 0) {</a>
+                                <a>          double x1= (-b + Math.sqrt((b*b) - 4 * a * c)) / (2 * a);    </a> 
+                                <a>        double x2 = (-b - Math.sqrt((b*b) - 4 * a * c)) / (2 * a);   </a>
+                                <a>       System.out.println("Los resulados son de x1 = "+ x1 + " y x2= "+ x2 );
+                                    <a>        }else{             </a>
+                                   <a>    System.out.println("La raiz de la operacion es imaginaria"); </a>
+                                   <a>  } </a>
+                                        
+                                        
+                                   <a>  break; </a>
+                                        
+                                   <a>     // Sale del programa   </a>
+                                   <a>    case 4:     </a> 
+                                   <a>            System.out.println("Terminando el Programa..."); </a>
+                                   <a>          System.exit(0); </a>
+                                   <a>            break;  </a>
+                                       
+                                   <a> }</a>
+                            
+                            
+                                   <a> } </a>
+                                   <a>}</a>
+                    
+                                   <a> public static int calcularMCD (int a, int b){</a>
+                                    <a>//Función para calcular el MCD</a>
+                                    <a> while (b !=0){ </a>
+                                        <a>  int residuo = a % b;</a>
+                                        <a>  a = b;</a>
+                                        <a> b = residuo;</a>
+                                
+                                        <a> }</a>
+                                        <a>  // Retorna el máximo común divisor</a>
+                                        <a> return a;</a>
+                                        <a>}</a>
+                   <a> }</a>
+                                    </p>
+
+
+                <h1  class="navbar-brand" href="index.html">Codigo contador de segundos</h1>
+        <p>
+
+
+         <a>import java.util.Scanner;</a>   
+
+         <a>public class Trabajo1 { </a>
+
+   <a> public static void main(String[] args) throws Exception {</a>
+
+    <a> Scanner leer = new Scanner(System.in);</a>
+
+    <a> int segundosdados, dias, horas, minutos, segundos;</a>
+
+    <a> System.out.println("Ingrese cuantos segundos desea poner");</a> 
+     <a>  segundosdados = leer.nextInt();</a> 
+
+     <a>    dias = segundosdados / 86400; </a>
+
+     <a>    horas = segundosdados%86400 / 3600; </a>
+
+     <a>    minutos = segundosdados%3600 / 60;</a>
+
+     <a>   segundos = segundosdados%60;  </a>
+
+
+     <a>  System.out.println("/n Lo equivalente es:"+ dias +" dias, " + horas +  </a> 
+     <a>    " horas, "+ minutos + " minutos y " + segundos + " segundos "  );  </a>
+
+    <a> }</a>
+<a>}</a>
+        </p>
+        <a href="index.html">
+        <button style="display: block; margin: 0px auto;"> Regresar </button>
+         </a>
+
+                
+
+
+    
+</body>
+</html>
