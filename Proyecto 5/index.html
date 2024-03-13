@@ -6,6 +6,73 @@
     <title>Proyecto 5</title>
 </head>
 <body>
+    <h1 id="Lista">Proyecto 5</h1>
+    <p>Este es el proyecto 5</p>
+    <script>
+    let lista = document.getElementById('Lista');
+    let texto = 'Hola mi nombre es Jairo y acabo de cumplir 19 años';
+    console.log(texto);
+
+    console.log('Otra forma de manejar cadenas String');
+
+    let text = `Cadeba multilinea
+    con comillas simples
+    y comillas dobles`;
+    console.log(text);
+    let a = 5;
+    let b = 10;
+    console.log(`El resultado de la suma de ${a} + ${b} es ${a+b}
+    Multiplicacion de ${a} por ${b} es ${a*b}
+
+    Division de ${a} entre ${b} es ${a/b} 
+    Alt + 96 = apostrofe invertido (backtick)
+
+    `);
+
+    let persona = "Mike";
+    let edad = 28;
+
+    function miFuncion(cadenas, personaX, edadExp){
+        let resultado = "";
+
+        /*if(edadExp < 18){
+        /   edadExp = 'es menor de edad';
+        }else{
+            edadExp = 'es mayor de edad';
+        }*/
+        console.log(cadenas);
+        console.log(cadenas[2]);
+
+
+        //edadExp < 18 ? resultado= 'es menor de edad' : resultado= 'es mayor de edad';
+        resultado = edadExp < 18 ? 'es menor de edad' : 'es mayor de edad';
+        //return cadenas + ' ' + personaX + ' ' + edadExp;
+        return resultado;
+    }
+
+    //console.log(miFuncion('Hola', 'Mike', 28));
+
+    let resultado2 = miFuncion`Hola ${persona} tienes ${edad}`;
+    console.log(resultado2);
+
+    let titulo = "Ganadores Orcars"
+    let cantantes = ["Billie Eilish", "Lady Gaga", "Adele"];
+    let cadenaHTML = `<h1>${titulo}</h1>`
+
+    cadenaHTML += `<ul>`;
+
+    for(let cantante of cantantes){
+        cadenaHTML += `<li>${cantante}</li>`;
+    }
+
+    cadenaHTML += `</ul>`;
+
+    lista.innerHTML = cadenaHTML;
+    
+
+
+
+    </script>
     
 </body>
 </html>
