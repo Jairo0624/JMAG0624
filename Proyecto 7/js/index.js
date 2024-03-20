@@ -1,14 +1,17 @@
 
     let resultado = document.getElementById('resultado');
 
-    function asignar(valor){
+    
+    let asignar = (valor) => {
         resultado.value += valor;
     }
 
-    function calcular(){
+    
+    let calcular = () => {
         resultado.value = eval(resultado.value);
     }
-
-    function clean(){
+    
+    let limpiar = () => {
         resultado.value = '';
     }
+    
