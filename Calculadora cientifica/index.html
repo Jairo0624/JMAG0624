@@ -12,17 +12,46 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center">Calculadora en JS</h1>
+                <h1 class="text-center">Calculadora Cientifica</h1>
             </div>
         </div>
     </div>
     <form action="calculadora">
+        
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
                     <input type="text" name="resultado" id="resultado" class="form-control" readonly>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-3 text-center py-3 offset-6">
+                    <button type="button" class="btn btn-primary form-control rounded-pill" onclick="asignar('(')">(</button>
+                </div>
+                <div class="col-3 text-center py-3">
+                    <button type="button" class="btn btn-primary form-control rounded-pill" onclick="asignar(')')">)</button>
+                </div>
+            </div>
+            </div>
+            <div class="container">
+            <div class="row">
+                <div class="col-3 text-center py-3">
+                    <button type="button" class="btn btn-primary form-control rounded-pill" onclick="calcularRaiz('√')">√</button>
+                </div>
+                <div class="col-3 text-center py-3">
+                    <button type="button" class="btn btn-primary form-control rounded-pill" onclick="calcularPotencia('^')">^2</button>
+                </div>
+                <div class="col-3 text-center py-3">
+                    <button type="button" class="btn btn-primary form-control rounded-pill" onclick="calcularEuler('e')">e</button>
+                </div>
+                <div class="col-3 text-center py-3">
+                    <button type="button" class="btn btn-secondary form-control rounded-pill" onclick="limpiar('')">C</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            
             <div class="row">
                 <div class="col-3 text-center py-3">
                     <button type="button" class="btn btn-primary form-control rounded-pill" onclick="asignar(7)">7</button>
@@ -84,7 +113,7 @@
                 <button type="button" class="btn btn-primary form-control rounded-pill" onclick="asignar('.')">.</button>
             </div>
             <div class="col-3 text-center py-3">
-                <button type="button" class="btn btn-secondary form-control rounded-pill" onclick="limpiar('')">C</button>
+                <button type="button" class="btn btn-primary form-control rounded-pill" onclick="calcularPi('π')">π</button>
             </div>
             <div class="col-3 text-center py-3">
                 <button type="button" class="btn btn-warning form-control rounded-pill"onclick="asignar('/')">/</button>
@@ -93,7 +122,7 @@
 
         </div>
         <div class="row">
-            <div class="col-6 text-center py-3 offset-6">
+            <div class="col-12 text-center py-3 ">
                 <button type="button" class="btn btn-success form-control rounded-pill" onclick="calcular()">=</button>
             </div>
     </div>
