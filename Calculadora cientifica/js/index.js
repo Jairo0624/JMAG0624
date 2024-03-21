@@ -30,3 +30,7 @@ let calcularEuler = () => {
 let calcularPi = () => {
     resultado.value = Math.PI;
 }
+
+let quitarCaracter = () => {
+    resultado.value = resultado.value.slice(0, -1);
+}
