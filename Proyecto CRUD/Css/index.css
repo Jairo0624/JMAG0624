@@ -1,0 +1,20 @@
+audio {
+    display: block;
+    margin: 1px auto;
+    width: 50%;
+    max-width: 300px;
+}
+
+video {
+    display: block;
+    margin: 1px auto;
+    width: 100%;
+    max-width: 310px;
+}
+
+img {
+    display: block;
+    margin: 1px auto;
+    width: 50%;
+    max-width: 300px;
+}
