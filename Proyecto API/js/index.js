@@ -21,6 +21,7 @@ function obtenerPeliculas(){
             listaPeliculas.innerHTML += `
             <div class="col-12 col-md-3">
                 <div class="card">
+                
                 <div class="card-body">
                     <h5 class="card-title">${pelicula.id}</h5>
                     <h5 class="card-title">${pelicula.movie}</h5>
