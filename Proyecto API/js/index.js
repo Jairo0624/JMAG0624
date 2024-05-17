@@ -1,8 +1,8 @@
-let peliculas = document.querySelector('#listaPeliculas');
+let productos = document.querySelector('#listaPeliculas');
 
 
 //Promise o Promesa
-fetch('https://dummyapi.online/api/movies')
+fetch('https://dummyapi.online/api/products')
   .then((response) => response.json())
   .then((json) => console.log(json));
 
@@ -11,23 +11,31 @@ fetch('https://dummyapi.online/api/movies')
 
 //<img src="${pelicula.image}" class="card-img-top py-5" >
 
-function obtenerPeliculas(){
-    fetch('https://dummyapi.online/api/movies')
+function obtenerProductos(){
+    fetch('https://dummyapi.online/api/products')
     .then((response) => response.json())
-    .then((peliculasObtenidas) => {
-        console.log("Peliculas obtenidas", peliculasObtenidas);
-        peliculasObtenidas.forEach((pelicula, indice) => {
-            console.log("Pelicula" + pelicula);
-            listaPeliculas.innerHTML += `
-            <div class="col-12 col-md-3">
+    .then((productosObtenidos) => {
+        console.log("Peliculas obtenidas", productosObtenidos);
+        productosObtenidos.forEach((producto, indice) => {
+            console.log("Pelicula" + producto);
+            listaProductos.innerHTML += `
+            <div class="col-12 col-md-3 py-3">
                 <div class="card">
-                
+                <img src="${producto.featuredImage}" class="card-img-top" >
                 <div class="card-body">
-                    <h5 class="card-title">${pelicula.id}</h5>
-                    <h5 class="card-title">${pelicula.movie}</h5>
-                    <p class="card-text">${pelicula.rating}</p>
-                    <p class="text-success">${pelicula.imdb_url}</p>
-                    <a href="#" class="btn btn-primary">Ver</a>
+                    <h5 class="card-title">${producto.id}</h5>
+                    <h5 class="card-title">${producto.name}</h5>
+                    <h5 class="card-title">${producto.productCategory}</h5>
+                    <h5 class="card-title">${producto.brand}</h5>
+                    <p class="card-text">${producto.description}</p>
+                    <h6 class="text-danger"> $${producto.basePrice}</h6>
+                    <p class="text-success">Disponible: ${producto.inStock}</p>
+                    <h6 class="card-text">${producto.stock} Disponible(s)</h6>
+                    <h6 class="card-text">Almacenamiento: ${producto.storageOptions}</h6>
+                    <h6 class="card-text">Colores: ${producto.colorOptions}</h6>
+                    <p class="card-text">Pantalla: ${producto.display}</p>
+                    <p class="card-text">Procesador: ${producto.CPU}</p>
+                    <a href="#" class="btn btn-primary">Màs Detalles</a>
                 </div>
                 </div> 
             `	
@@ -37,4 +45,4 @@ function obtenerPeliculas(){
 }
 
 
-obtenerPeliculas();
+obtenerProductos();
