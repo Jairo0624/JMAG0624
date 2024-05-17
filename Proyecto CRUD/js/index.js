@@ -14,7 +14,7 @@ let formulario = document.getElementById('formulario');
         fecha : "2013-08-13", 
         descripcion :"Geometry Dash es un videojuego de plataformas y videojuego rítmico creado en 2013 por el desarrollador sueco Robert Topala.",
         imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqnwU-PsfkfSP_gP_Jafhjl_6LGxEiL3nQ5OoCHdNBvXi885LiYJ38LJuWm7Y5J-0VZyA&usqp=CAU",
-        audioMp3: "Music/Jumper.mp3",
+        audioMp3: "Music/Jumper.mp3  ",
         videoMp4:"Videos/Geometry Dash 2.2 Trailer.mp4" }, ,
         
         {nombre : "Super Mario Galaxy", 
