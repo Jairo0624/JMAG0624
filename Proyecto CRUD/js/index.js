@@ -79,6 +79,9 @@ let formulario = document.getElementById('formulario');
         nombreEditar.value = tareas[indice].nombre;
         fechaEditar.value = tareas[indice].fecha;
         descripcionEditar.value = tareas[indice].descripcion;
+        imagenEditar.value = tareas[indice].imagen;
+        audioMp3Editar.value = tareas[indice].audioMp3;
+        videoMp4Editar.value = tareas[indice].videoMp4;
         idTarea.value = indice;
     }
  
@@ -88,6 +91,9 @@ let formulario = document.getElementById('formulario');
         tareas[indice].nombre = nombreEditar.value;
         tareas[indice].fecha = fechaEditar.value;
         tareas[indice].descripcion = descripcionEditar.value;
+        tareas[indice].imagen = imagenEditar.value;
+        tareas[indice].audioMp3 = audioMp3Editar.value;
+        tareas[indice].videoMp4 = videoMp4Editar.value;
         mostrarTareas();
         cerrarModalEditar();
     });
@@ -96,7 +102,10 @@ let formulario = document.getElementById('formulario');
         let datos = {
             nombre: nombre.value,
             fecha: fecha.value,
-            descripcion: descripcion.value
+            descripcion: descripcion.value,
+            audioMp3: audioMp3.value,
+            videoMp4: videoMp4.value,
+            imagen: imagen.value
         }
         tareas.push(datos);
         mostrarTareas();
