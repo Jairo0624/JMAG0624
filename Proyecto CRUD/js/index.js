@@ -133,3 +133,4 @@ let formulario = document.getElementById('formulario');
         cerrarModal();
         formulario.reset();
     });
+    
