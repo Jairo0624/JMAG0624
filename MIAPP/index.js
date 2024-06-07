@@ -1,7 +1,16 @@
 const express = require('express');
+var cors = require('cors');
 const app = express();
 const port = 3000;
 
+app.use(cors());
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(require('./routes/productos'));
+
+/*
 app.get('/', (req, res) => {
     res.send('Hola Dia de la Hamburguesa!');
     });
@@ -22,8 +31,9 @@ app.get('/productos', (req, res) => {
         respuesta += '</table>';
         res.send(respuesta);
     });
+*/
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`Example app listening at http://localhost ${port}`);
     });
 
